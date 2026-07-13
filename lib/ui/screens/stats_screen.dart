@@ -11,7 +11,7 @@ import 'artist_screen.dart';
 class StatsScreen extends StatefulWidget {
   const StatsScreen({super.key, required this.api, required this.auth});
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final AuthController auth;
 
   @override

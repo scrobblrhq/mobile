@@ -71,7 +71,7 @@ class Credentials {
 class CredentialsStore {
   const CredentialsStore();
 
-  static const _key = 'newfm.credentials';
+  static const _key = 'scrobblr.credentials';
   static const _storage = FlutterSecureStorage(
     aOptions: AndroidOptions(encryptedSharedPreferences: true),
   );

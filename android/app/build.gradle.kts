@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "fm.newfm.mobile"
+    namespace = "app.scrobblr.mobile"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,7 +20,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "fm.newfm.mobile"
+        applicationId = "app.scrobblr.mobile"
         // MediaSessionManager access + NotificationListenerService.requestRebind
         // need API 24; 26 lets the adaptive vector launcher icon cover all
         // devices with no PNG assets.

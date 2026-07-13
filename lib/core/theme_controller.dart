@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-const String _prefThemeMode = 'newfm.theme_mode';
+const String _prefThemeMode = 'scrobblr.theme_mode';
 
 /// App-wide theme mode preference (system/light/dark), persisted in
-/// SharedPreferences and applied by `NewfmApp` via [ListenableBuilder].
+/// SharedPreferences and applied by `ScrobblrApp` via [ListenableBuilder].
 class ThemeController extends ValueNotifier<ThemeMode> {
   ThemeController() : super(ThemeMode.system);
 

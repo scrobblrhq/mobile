@@ -25,12 +25,12 @@ class AuthController extends ChangeNotifier {
 
   /// Session-token client for UI reads. Callers must not cache it across
   /// sign-outs.
-  NewfmApi api() {
+  ScrobblrApi api() {
     final creds = _credentials;
     if (creds == null) {
       throw StateError('not signed in');
     }
-    return NewfmApi(baseUrl: creds.serverUrl, token: creds.sessionToken);
+    return ScrobblrApi(baseUrl: creds.serverUrl, token: creds.sessionToken);
   }
 
   Future<void> restore() async {
@@ -46,7 +46,7 @@ class AuthController extends ChangeNotifier {
     String? email,
     String? displayName,
   }) async {
-    final anon = NewfmApi(baseUrl: serverUrl);
+    final anon = ScrobblrApi(baseUrl: serverUrl);
     final AuthResponse auth;
     try {
       auth =
@@ -62,7 +62,7 @@ class AuthController extends ChangeNotifier {
       anon.close();
     }
 
-    final sessioned = NewfmApi(baseUrl: serverUrl, token: auth.token);
+    final sessioned = ScrobblrApi(baseUrl: serverUrl, token: auth.token);
     final CreatedApiToken deviceToken;
     try {
       deviceToken = await sessioned.createApiToken(apiTokenName);
@@ -104,7 +104,7 @@ class AuthController extends ChangeNotifier {
       // Users who signed in before the URL was remembered (or on an older
       // version) still keep their server across this sign-out.
       await _rememberServer(creds.serverUrl);
-      final client = NewfmApi(
+      final client = ScrobblrApi(
         baseUrl: creds.serverUrl,
         token: creds.sessionToken,
       );

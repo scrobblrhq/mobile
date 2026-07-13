@@ -1,4 +1,4 @@
-package fm.newfm.mobile
+package app.scrobblr.mobile
 
 import android.Manifest
 import android.content.ComponentName
@@ -10,8 +10,8 @@ import android.os.Bundle
 import android.os.PowerManager
 import android.provider.Settings
 import android.service.notification.NotificationListenerService
-import fm.newfm.mobile.scrobble.BackgroundEngineHolder
-import fm.newfm.mobile.scrobble.MediaListenerService
+import app.scrobblr.mobile.scrobble.BackgroundEngineHolder
+import app.scrobblr.mobile.scrobble.MediaListenerService
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -33,7 +33,7 @@ class MainActivity : FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
-            "newfm/scrobble/control",
+            "scrobblr/scrobble/control",
         ).setMethodCallHandler { call, result ->
             when (call.method) {
                 "isListenerEnabled" -> result.success(isListenerEnabled())

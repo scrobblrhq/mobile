@@ -10,7 +10,7 @@
 
     <application
         android:name="${applicationName}"
-        android:label="newfm"
+        android:label="Scrobblr"
         android:icon="@mipmap/ic_launcher">
 
         <activity
@@ -36,7 +36,7 @@
              and reboots, keeping the background scrobble pipeline alive. -->
         <service
             android:name=".scrobble.MediaListenerService"
-            android:label="newfm scrobbler"
+            android:label="Scrobblr scrobbler"
             android:exported="false"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>

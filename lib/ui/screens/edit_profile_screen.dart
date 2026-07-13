@@ -16,7 +16,7 @@ class EditProfileScreen extends StatefulWidget {
     required this.profile,
   });
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final UserProfile profile;
 
   @override

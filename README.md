@@ -1,6 +1,6 @@
-# newfm mobile
+# Scrobblr mobile
 
-Android scrobbler for newfm: a persistent notification listener detects what
+Android scrobbler for Scrobblr: a persistent notification listener detects what
 any player is playing, a debounced/deduplicated pipeline decides what counts
 as a listen, and a Material You UI shows the enriched catalog the backend
 builds in the background.
@@ -12,7 +12,7 @@ builds in the background.
 │    · notification-access permission gates MediaSessionManager       │
 │    · diffs active sessions, one callback per player                 │
 │    · thin sensor: forwards raw events, interprets nothing           │
-│            │ MethodChannel `newfm/scrobble/background`              │
+│            │ MethodChannel `scrobblr/scrobble/background`              │
 │            ▼                                                        │
 │  Background FlutterEngine (headless, no UI needed)                  │
 │    scrobbleServiceMain → ScrobbleService                            │
@@ -27,7 +27,7 @@ builds in the background.
 └─────────────────────────────────────────────────────────────────────┘
                      │ HTTP (session token for reads,
                      ▼        API token for scrobbling)
-                newfm API (crates/api)
+                Scrobblr API (crates/api)
 ```
 
 ## Decisions
@@ -139,7 +139,7 @@ lib/
   scrobbling/          PURE DART: events, parsers, engine, rules, queue  ← tested
   background/          headless service, channel/port protocol, UI facade
   ui/                  shell, screens (home/stats/artist/settings/login), widgets
-android/app/src/main/kotlin/fm/newfm/mobile/
+android/app/src/main/kotlin/fm/Scrobblr/mobile/
   MainActivity.kt                     control channel (permission, rebind, battery)
   scrobble/MediaListenerService.kt    NotificationListenerService + session diffing
   scrobble/BackgroundEngineHolder.kt  headless engine lifecycle + event buffering

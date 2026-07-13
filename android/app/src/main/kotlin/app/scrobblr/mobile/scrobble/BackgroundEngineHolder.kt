@@ -1,4 +1,4 @@
-package fm.newfm.mobile.scrobble
+package app.scrobblr.mobile.scrobble
 
 import android.content.Context
 import android.os.Handler
@@ -22,9 +22,9 @@ import java.util.ArrayDeque
  * and flushed once Dart calls `ready` (which also hands Dart its init args).
  */
 object BackgroundEngineHolder {
-    private const val TAG = "NewfmBgEngine"
-    private const val ENGINE_ID = "newfm_scrobble_engine"
-    private const val CHANNEL = "newfm/scrobble/background"
+    private const val TAG = "ScrobblrBgEngine"
+    private const val ENGINE_ID = "scrobblr_scrobble_engine"
+    private const val CHANNEL = "scrobblr/scrobble/background"
     private const val ENTRYPOINT = "scrobbleServiceMain"
     private const val BUFFER_CAP = 200
 

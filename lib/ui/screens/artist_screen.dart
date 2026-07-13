@@ -25,7 +25,7 @@ class ArtistScreen extends StatefulWidget {
     this.artistName,
   });
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final AuthController auth;
   final int artistId;
   final String? artistName;

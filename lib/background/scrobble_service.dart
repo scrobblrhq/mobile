@@ -45,7 +45,7 @@ class ScrobbleService {
   final CredentialsStore _store = const CredentialsStore();
 
   PendingQueue? _queue;
-  NewfmApi? _api;
+  ScrobblrApi? _api;
   Timer? _engineTimer;
   Timer? _queueTimer;
   ReceivePort? _controlPort;
@@ -191,7 +191,7 @@ class ScrobbleService {
     _publishSnapshot();
   }
 
-  Future<void> _post(NewfmApi api, PendingScrobble item) {
+  Future<void> _post(ScrobblrApi api, PendingScrobble item) {
     return api.submitScrobble(
       artist: item.artist,
       track: item.track,
@@ -250,7 +250,7 @@ class ScrobbleService {
     _api =
         creds == null
             ? null
-            : NewfmApi(baseUrl: creds.serverUrl, token: creds.apiToken);
+            : ScrobblrApi(baseUrl: creds.serverUrl, token: creds.apiToken);
   }
 
   Future<void> _reloadConfig() async {

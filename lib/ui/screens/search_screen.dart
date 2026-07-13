@@ -15,7 +15,7 @@ import 'track_screen.dart';
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key, required this.api, required this.auth});
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final AuthController auth;
 
   @override

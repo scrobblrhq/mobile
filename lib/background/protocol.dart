@@ -12,27 +12,27 @@
 ///    `IsolateNameServer` ports [bgControlPortName] / [uiSnapshotPortName].
 library;
 
-const String backgroundChannelName = 'newfm/scrobble/background';
-const String controlChannelName = 'newfm/scrobble/control';
+const String backgroundChannelName = 'scrobblr/scrobble/background';
+const String controlChannelName = 'scrobblr/scrobble/control';
 
 /// Registered by the background isolate; accepts
 /// `{'type': 'credentialsChanged' | 'configChanged' | 'snapshotRequest'}`.
-const String bgControlPortName = 'fm.newfm.bg.control';
+const String bgControlPortName = 'app.scrobblr.bg.control';
 
 /// Registered by the UI when the pipeline monitor is visible; receives
 /// snapshot maps of shape `{'type': 'pipeline', 'active': {...}?, ...}`.
-const String uiSnapshotPortName = 'fm.newfm.ui.snapshots';
+const String uiSnapshotPortName = 'app.scrobblr.ui.snapshots';
 
 /// SharedPreferences keys (written by the UI, read by the background
 /// isolate after a `configChanged` ping).
-const String prefDisabledSources = 'newfm.disabled_sources';
-const String prefScrobblingEnabled = 'newfm.scrobbling_enabled';
+const String prefDisabledSources = 'scrobblr.disabled_sources';
+const String prefScrobblingEnabled = 'scrobblr.scrobbling_enabled';
 
 /// User-added scrobble sources (Android package names) beyond the built-in
 /// known list; they parse with the generic parser.
-const String prefCustomSources = 'newfm.custom_sources';
+const String prefCustomSources = 'scrobblr.custom_sources';
 
 /// Whether apps not in the known/custom source lists may scrobble via the
 /// generic fallback parser. Defaults to true (historic behavior); turning it
 /// off makes the sources list an allowlist.
-const String prefCatchAllEnabled = 'newfm.catch_all_enabled';
+const String prefCatchAllEnabled = 'scrobblr.catch_all_enabled';

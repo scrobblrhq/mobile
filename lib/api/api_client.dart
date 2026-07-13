@@ -1,4 +1,4 @@
-/// HTTP client for the newfm API.
+/// HTTP client for the Scrobblr API.
 ///
 /// One instance per credential: the UI uses a session-token client (the
 /// `optional_auth` read routes only honor sessions), the background
@@ -28,8 +28,8 @@ class ApiException implements Exception {
   String toString() => 'ApiException($statusCode): $message';
 }
 
-class NewfmApi {
-  NewfmApi({required String baseUrl, this.token, http.Client? client})
+class ScrobblrApi {
+  ScrobblrApi({required String baseUrl, this.token, http.Client? client})
     : baseUrl = baseUrl.replaceFirst(RegExp(r'/+$'), ''),
       _client = client ?? http.Client();
 

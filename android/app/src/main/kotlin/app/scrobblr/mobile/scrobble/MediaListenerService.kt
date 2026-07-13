@@ -1,4 +1,4 @@
-package fm.newfm.mobile.scrobble
+package app.scrobblr.mobile.scrobble
 
 import android.content.ComponentName
 import android.content.Context
@@ -169,7 +169,7 @@ class MediaListenerService : NotificationListenerService() {
     }
 
     companion object {
-        private const val TAG = "NewfmMediaListener"
+        private const val TAG = "ScrobblrMediaListener"
 
         /** Whether the system currently has this listener bound. Lets the
          *  activity detect the OEM "permission granted but never rebound

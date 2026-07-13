@@ -19,7 +19,7 @@ class HomeScreen extends StatefulWidget {
     required this.service,
   });
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final AuthController auth;
   final ScrobbleServiceClient service;
 
@@ -166,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('newfm'),
+        title: const Text('Scrobblr'),
         actions: [
           IconButton(
             tooltip: 'Search',
@@ -303,7 +303,7 @@ class _PermissionBanner extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'newfm reads media sessions through the notification listener '
+              'Scrobblr reads media sessions through the notification listener '
               'to detect what you play. Nothing is scrobbled until you '
               'grant it.',
               style: text.bodyMedium?.copyWith(color: scheme.onErrorContainer),

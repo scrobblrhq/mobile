@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Boot the pipeline and hand it the fresh API token.
       await widget.service.ensureServiceRunning();
       widget.service.notifyCredentialsChanged();
-      // NewfmApp swaps to the Shell via the AuthController listener.
+      // ScrobblrApp swaps to the Shell via the AuthController listener.
     } on ApiException catch (e) {
       setState(() => _error = e.message.isEmpty ? 'Request failed' : e.message);
     } catch (_) {
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
         () =>
             _error =
                 server == hostedServerUrl
-                    ? "Can't reach the newfm server right now. Check your "
+                    ? "Can't reach the Scrobblr server right now. Check your "
                         'connection and try again in a moment.'
                     : 'Could not reach $server. Check the URL.',
       );
@@ -155,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Center(child: Text('newfm', style: text.headlineMedium)),
+                Center(child: Text('Scrobblr', style: text.headlineMedium)),
                 Center(
                   child: Text(
                     'Scrobble what you play',

@@ -29,7 +29,7 @@ class Shell extends StatefulWidget {
 }
 
 class _ShellState extends State<Shell> {
-  late final NewfmApi _api = widget.auth.api();
+  late final ScrobblrApi _api = widget.auth.api();
   int _index = 0;
 
   @override

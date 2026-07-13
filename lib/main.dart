@@ -4,7 +4,7 @@ import 'app.dart';
 import 'background/scrobble_service.dart';
 
 void main() {
-  runApp(const NewfmApp());
+  runApp(const ScrobblrApp());
 }
 
 /// Entrypoint executed by the headless background FlutterEngine that

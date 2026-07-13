@@ -1,5 +1,5 @@
-name: newfm_mobile
-description: newfm Android scrobbler — background media-session listener with a Material You UI.
+name: scrobblr_mobile
+description: Scrobblr Android scrobbler — background media-session listener with a Material You UI.
 publish_to: "none"
 version: 0.1.0+1
 

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:newfm_mobile/scrobbling/player_event.dart';
-import 'package:newfm_mobile/scrobbling/scrobble_engine.dart';
-import 'package:newfm_mobile/scrobbling/scrobble_rules.dart';
+import 'package:scrobblr_mobile/scrobbling/player_event.dart';
+import 'package:scrobblr_mobile/scrobbling/scrobble_engine.dart';
+import 'package:scrobblr_mobile/scrobbling/scrobble_rules.dart';
 
 const settle = 5000;
 

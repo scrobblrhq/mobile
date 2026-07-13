@@ -18,7 +18,7 @@ class FriendsScreen extends StatefulWidget {
     required this.username,
   });
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final AuthController auth;
   final String username;
 

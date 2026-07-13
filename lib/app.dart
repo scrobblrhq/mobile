@@ -9,16 +9,16 @@ import 'ui/shell.dart';
 
 /// Brand seed, used when the platform provides no wallpaper-derived palette
 /// (pre-Android 12, tests, first frame).
-const Color newfmSeed = Color(0xFFC51224);
+const Color scrobblrSeed = Color(0xFFC51224);
 
-class NewfmApp extends StatefulWidget {
-  const NewfmApp({super.key});
+class ScrobblrApp extends StatefulWidget {
+  const ScrobblrApp({super.key});
 
   @override
-  State<NewfmApp> createState() => _NewfmAppState();
+  State<ScrobblrApp> createState() => _ScrobblrAppState();
 }
 
-class _NewfmAppState extends State<NewfmApp> {
+class _ScrobblrAppState extends State<ScrobblrApp> {
   final AuthController _auth = AuthController();
   final ThemeController _theme = ThemeController();
   static const ScrobbleServiceClient _service = ScrobbleServiceClient();
@@ -48,11 +48,11 @@ class _NewfmAppState extends State<NewfmApp> {
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
         final light =
             lightDynamic?.harmonized() ??
-            ColorScheme.fromSeed(seedColor: newfmSeed);
+            ColorScheme.fromSeed(seedColor: scrobblrSeed);
         final dark =
             darkDynamic?.harmonized() ??
             ColorScheme.fromSeed(
-              seedColor: newfmSeed,
+              seedColor: scrobblrSeed,
               brightness: Brightness.dark,
             );
 
@@ -60,7 +60,7 @@ class _NewfmAppState extends State<NewfmApp> {
           listenable: _theme,
           builder:
               (context, _) => MaterialApp(
-                title: 'newfm',
+                title: 'Scrobblr',
                 debugShowCheckedModeBanner: false,
                 theme: _themeData(light),
                 darkTheme: _themeData(dark),

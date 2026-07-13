@@ -26,7 +26,7 @@ class ProfileScreen extends StatefulWidget {
     this.username,
   });
 
-  final NewfmApi api;
+  final ScrobblrApi api;
   final AuthController auth;
   final String? username;
 

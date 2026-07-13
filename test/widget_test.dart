@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:newfm_mobile/auth/auth_controller.dart';
-import 'package:newfm_mobile/background/service_client.dart';
-import 'package:newfm_mobile/ui/screens/login_screen.dart';
+import 'package:scrobblr_mobile/auth/auth_controller.dart';
+import 'package:scrobblr_mobile/background/service_client.dart';
+import 'package:scrobblr_mobile/ui/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Widget _loginApp() => MaterialApp(
@@ -23,7 +23,7 @@ void main() {
     await tester.pumpWidget(_loginApp());
     await tester.pump();
 
-    expect(find.text('newfm'), findsOneWidget);
+    expect(find.text('Scrobblr'), findsOneWidget);
     // Debug builds open the advanced section with the dev server pre-filled.
     expect(find.text('Server URL'), findsOneWidget);
     expect(find.text('Username'), findsOneWidget);
@@ -69,7 +69,7 @@ void main() {
     tester,
   ) async {
     SharedPreferences.setMockInitialValues({
-      'newfm.last_server_url': 'http://my-nas.local:8080',
+      'scrobblr.last_server_url': 'http://my-nas.local:8080',
     });
 
     await tester.pumpWidget(_loginApp());

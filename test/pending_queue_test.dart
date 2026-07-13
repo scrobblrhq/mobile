@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:newfm_mobile/scrobbling/pending_queue.dart';
+import 'package:scrobblr_mobile/scrobbling/pending_queue.dart';
 
 PendingScrobble item(String track, {int playedAtMs = 0}) => PendingScrobble(
   artist: 'Artist',
@@ -17,7 +17,7 @@ void main() {
   late File file;
 
   setUp(() {
-    dir = Directory.systemTemp.createTempSync('newfm_queue_test');
+    dir = Directory.systemTemp.createTempSync('Scrobblr_queue_test');
     file = File('${dir.path}/queue.json');
   });
 

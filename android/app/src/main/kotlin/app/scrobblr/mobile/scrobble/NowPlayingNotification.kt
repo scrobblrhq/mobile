@@ -1,4 +1,4 @@
-package fm.newfm.mobile.scrobble
+package app.scrobblr.mobile.scrobble
 
 import android.app.Notification
 import android.app.NotificationChannel
