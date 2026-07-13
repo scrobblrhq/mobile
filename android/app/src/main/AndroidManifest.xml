@@ -1,0 +1,61 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Lets Settings offer "unrestricted" so OEM battery managers don't
+         kill the listener process between tracks. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Silent persistent "now playing" notification (Android 13+ runtime
+         permission, requested at first launch). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name="${applicationName}"
+        android:label="newfm"
+        android:icon="@mipmap/ic_launcher">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The persistent notification listener. Binding it grants access to
+             other apps' MediaSessions; the system rebinds it after crashes
+             and reboots, keeping the background scrobble pipeline alive. -->
+        <service
+            android:name=".scrobble.MediaListenerService"
+            android:label="newfm scrobbler"
+            android:exported="false"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+        <!-- Impeller's Vulkan backend deadlocks on this class of Mali GPUs
+             (main thread stuck in an engine fence wait -> input ANR the
+             moment the keyboard resizes the surface). Force the mature
+             OpenGLES backend instead. (Do NOT add
+             DisableMergedPlatformUIThread: this engine version rejects it
+             with a fatal error at startup.) -->
+        <meta-data
+            android:name="io.flutter.embedding.android.ImpellerBackend"
+            android:value="opengles" />
+    </application>
+</manifest>
